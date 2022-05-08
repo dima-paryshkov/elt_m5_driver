@@ -6,6 +6,7 @@
 #include <linux/vt.h>
 #include <linux/console_struct.h>
 #include <linux/fs.h>
+#include <linux/vt_kern.h>
 #include <linux/kobject.h> 
 #include <linux/sysfs.h> 
 
@@ -44,6 +45,7 @@ static struct kobj_attribute kbledstatus_attribute = __ATTR(kbledstatus, 0664, (
 static int __init kbleds__init(void) 
 { 
     int error = 0; 
+    int i;
  
     pr_info("kbleds: initialised\n"); 
  
@@ -60,7 +62,6 @@ static int __init kbleds__init(void)
     printk(KERN_INFO "kbleds: loading\n");
     printk(KERN_INFO "kbleds: fgconsole is %x\n", fg_console);
     
-    int i;
     for (i = 0; i < MAX_NR_CONSOLES; i++)
     {
         if (!vc_cons[i].d)
@@ -71,7 +72,7 @@ static int __init kbleds__init(void)
     }
     printk(KERN_INFO "kbleds: finished scanning consoles\n");
     
-    kbleds_driver = vc_cons[fg_console].d->port.tty->driver
+    kbleds_driver = vc_cons[fg_console].d->port.tty->driver;
     printk(KERN_INFO "kbleds: tty driver magic %x\n", kbleds_driver->magic);
 
     return error; 
