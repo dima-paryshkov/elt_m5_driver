@@ -35,8 +35,7 @@ Set the value of kbledstatus (only for superuser):
 The meaning of the positions: 1 - CAPS LOCK, 2 - NUM LOCK, 3 - SP.
 Options: 0 - turn off, 1 - turn on.
 
-"0. 000   1. 001   2. 010   3. 011"
-"4. 100   5. 101   6. 110   7. 111"
+"0. 000   1. 001   2. 010   3. 011   4. 100   5. 101   6. 110   7. 111"
 
 Fast test this module with menu: 
 
