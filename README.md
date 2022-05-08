@@ -4,16 +4,15 @@
 
 The first will be simple module, that control leds on your keyboard.
 
-Main file - kbleds.c
-Test file - test.sh
+Main file - kbleds.c, test file - test.sh
 
 Build the module: 
 
-    make
+    $ make
 
-Clean file of module: 
+Clean files of module: 
 
-    make clean
+    $ make clean
 
 Install the module: 
 
@@ -33,10 +32,11 @@ Set the value of kbledstatus (only for superuser):
     root@your_machine:~# echo <value> > /sys/kernel/kbleds/kbledstatus 
     <value> - number in [0-7]
 
-The meaning of the positions: 1 - CAPS LOCK, 2 - NUM LOCK, 3 - SP
-Options: 0 - turn off, 1 - turn on
-"0. 000 \t 1. 001 \t 2. 010 \t 3. 011"
-"4. 100 \t 5. 101 \t 6. 110 \t 7. 111"
+The meaning of the positions: 1 - CAPS LOCK, 2 - NUM LOCK, 3 - SP.
+Options: 0 - turn off, 1 - turn on.
+
+"0. 000   1. 001   2. 010   3. 011"
+"4. 100   5. 101   6. 110   7. 111"
 
 Fast test this module with menu: 
 
@@ -44,4 +44,4 @@ Fast test this module with menu:
 
 Remove the module:
 
-    rmmod kbleds
+    $ rmmod kbleds
