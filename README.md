@@ -1,6 +1,6 @@
-## Working with sysfs, netlink and chardev
+# Working with sysfs, netlink and chardev
 
-### sysfs
+## sysfs
 
 Work folder - kbleds. Use `cd kbleds`
 
@@ -22,7 +22,7 @@ Install the module:
 
 Check that it exist: 
 
-    $ sudo lsmod | grep kbleds
+    $ lsmod | grep kbleds
 
 What is the current value of kbledstatus? Check it: 
 
@@ -45,7 +45,7 @@ Fast test this module with menu:
 
 Remove the module:
 
-    $ rmmod kbleds
+    $ sudo rmmod kbleds
 
 Based on this sources:
 
@@ -55,3 +55,42 @@ Based on this sources:
 
 3. [Blink keyboard kbleds.c linux kernel 4.15](https://pastebin.com/r46SDJzs)
 
+
+## chardev
+
+Work folder - chardev. Use `cd chardev`
+
+This is simple example of character device.
+
+Build the module: 
+
+    $ make
+
+Clean files of module: 
+
+    $ make clean
+
+Install the module: 
+
+    $ sudo insmod chardev.ko
+
+Check that it exist: 
+
+    $ lsmod | grep chardev
+
+What is the current value of chardev buffer? Check it: 
+
+    $ sudo cat /dev/chardev
+
+Unfortunately, you can't write in driver, but you can try (only for superuser):
+    
+    $ su - root
+    root@your_machine:~# echo <any_value> > /dev/chardev
+
+Remove the module:
+
+    $ sudo rmmod chardev
+
+Based on this sources:
+
+1. [The Linux Kernel Module Programming Guide,  8 sysfs: Interacting with your module](https://sysprog21.github.io/lkmpg/#sysfs-interacting-with-your-module)
