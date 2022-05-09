@@ -2,9 +2,11 @@
 
 ### sysfs
 
+Work folder - kbleds. Use `cd kbleds`
+
 The first will be simple module, that control leds on your keyboard.
 
-Main file - kbleds.c, test file - test.sh
+Main file - kbleds.c, test file - test.sh.
 
 Build the module: 
 
@@ -44,3 +46,12 @@ Fast test this module with menu:
 Remove the module:
 
     $ rmmod kbleds
+
+Based on this sources:
+
+    1. [The Linux Kernel Module Programming Guide,  8 sysfs: Interacting with your module](https://sysprog21.github.io/lkmpg/#sysfs-interacting-with-your-module)
+
+    2. (Sysfs read and write module linux kernel 4.15)[https://pastebin.com/qEKTZZcB]
+
+    3. (Blink keyboard kbleds.c linux kernel 4.15)[https://pastebin.com/r46SDJzs]
+
