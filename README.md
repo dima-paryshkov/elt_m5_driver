@@ -94,3 +94,43 @@ Remove the module:
 Based on this sources:
 
 1. [The Linux Kernel Module Programming Guide,  8 sysfs: Interacting with your module](https://sysprog21.github.io/lkmpg/#sysfs-interacting-with-your-module)
+
+## netlink socket
+
+Work folder - netlink. Use `cd netlink`
+
+This is a client server application. The server is a kernel module, and the client is a user-space program. Communication occurs through a socket with the type AF_NETLINK (communication between kernel and user space).
+
+Build the module of kernel space: 
+
+    $ make
+
+Clean files of module: 
+
+    $ make clean
+
+Install the module: 
+
+    $ sudo insmod kernel_space.ko
+
+Check that it exist: 
+
+    $ lsmod | grep kernel_space
+
+Compile user-space programm: 
+
+    $ make user_space
+
+Now you can launch user-space progamm:
+
+    $ ./user_space
+
+You should write short message, that kernel return you like echo.
+
+Remove the module:
+
+    $ sudo rmmod kernel_space
+
+Based on this sources:
+
+1. [Netlink socket creation](https://stackoverflow.com/questions/27755246/netlink-socket-creation-returns-null)
