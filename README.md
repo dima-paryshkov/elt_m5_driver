@@ -100,6 +100,7 @@ Based on this sources:
 Work folder - netlink. Use `cd netlink`
 
 This is a client server application. The server is a kernel module, and the client is a user-space program. Communication occurs through a socket with the type AF_NETLINK (communication between kernel and user space).
+You send a message, the server responds with a greeting, your call number, and an echo response to your message.
 
 Build the module of kernel space: 
 
